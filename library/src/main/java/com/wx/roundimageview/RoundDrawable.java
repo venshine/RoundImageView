@@ -36,7 +36,7 @@ public class RoundDrawable extends Drawable {
     /**
      * 边框颜色
      */
-    private static final int BORDER_COLOR = 0;
+    private static final int BORDER_COLOR = 0x00000000;
 
     /**
      * 边框宽度

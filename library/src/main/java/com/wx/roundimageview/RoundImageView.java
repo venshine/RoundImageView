@@ -17,6 +17,7 @@ package com.wx.roundimageview;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -53,15 +54,33 @@ public class RoundImageView extends ImageView {
 
     public RoundImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        initAttrs(context, attrs);
     }
 
     public RoundImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initAttrs(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public RoundImageView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        initAttrs(context, attrs);
+    }
+
+    /**
+     * 初始化属性
+     */
+    private void initAttrs(Context context, AttributeSet attrs) {
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.round_imageview);
+        mBorderColor = ta.getColor(R.styleable.round_imageview_border_color, 0x00000000);
+        mBorderWidth = (int) ta.getDimension(R.styleable.round_imageview_border_width, 0);
+        mIsCircle = ta.getBoolean(R.styleable.round_imageview_circle, false);
+        ta.recycle();
+        int resId = attrs.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "src", -1);
+        if (resId != -1) {
+            setImageResource(resId, mBorderColor, mBorderWidth, mIsCircle);
+        }
     }
 
     /**

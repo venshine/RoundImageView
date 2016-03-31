@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.wx.roundimageview.demo"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <com.wx.roundimageview.RoundImageView
-        android:id="@+id/round_imageview"
+        android:id="@+id/round_imageview1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@mipmap/ic_launcher"
+        app:border_color="#ff0000"
+        app:border_width="2dp"
+        app:circle="true"
         />
-</RelativeLayout>
+
+    <com.wx.roundimageview.RoundImageView
+        android:id="@+id/round_imageview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+    <com.wx.roundimageview.RoundImageView
+        android:id="@+id/round_imageview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+    <com.wx.roundimageview.RoundImageView
+        android:id="@+id/round_imageview4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+</LinearLayout>
