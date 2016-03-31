@@ -3,7 +3,7 @@
 
 ScreenShot
 --
-![](https://github.com/venshine/RoundImageView/blob/master/screenshot/screenshot.gif)
+![](https://github.com/venshine/RoundImageView/blob/master/screenshot/screenshot.png)
 
 Demo
 --
