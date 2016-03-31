@@ -5,6 +5,24 @@ ScreenShot
 --
 ![](https://github.com/venshine/RoundImageView/blob/master/screenshot/screenshot.png)
 
+Usage
+--
+##### Gradle:
+```groovy
+compile 'com.wx.roundimageview:library:1.0.0'
+```
+
+##### Maven:
+```xml
+<dependency>
+  <groupId>com.wx.roundimageview</groupId>
+  <artifactId>library</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
+
 Demo
 --
 Use the RoundImageView as a View, Java and XML are both supported.
