@@ -45,6 +45,7 @@ Use the RoundImageView as a View, Java and XML are both supported.
 ##### XML:
 ```xml
     <com.wx.roundimageview.RoundImageView
+        xmlns:app="http://schemas.android.com/apk/res/com.wx.roundimageview.demo"
         android:id="@+id/round_imageview1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
