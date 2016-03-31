@@ -38,6 +38,29 @@ Use the RoundImageView as a View, Java and XML are both supported.
         />
 ```
 
+##### Attributes:
+| attr 属性          | description 描述 |
+|:---				 |:---|
+| border_color  	     | 边框颜色 |
+| border_width  	     |边框宽度 |
+| circle	 	 | 是否圆形展示 |
+
+
+##### Methods:
+| method 方法          | description 描述 |
+|:---				 |:---|
+| void setBorderColor(String borderColor)  	     | 设置边框颜色，形如'#aarrggbb' |
+| void setBorderColor(int borderColor) 	     |设置边框颜色，形如{@link android.graphics.Color} |
+| int getBorderColor()	 	 | 获取边框颜色 |
+| void setBorderWidth(int borderWidth)  	     | 设置边框宽度 |
+| int getBorderWidth() 	     |获取边框宽度 |
+| void setCircle(boolean isCircle)	 	 | 设置圆形处理方式，默认按椭圆处理 |
+| boolean isCircle()  	     |是否设置圆形处理 |
+| void setImageResource(int resId, int borderColor, int borderWidth, boolean isCircle)	 	 | 设置图片资源，包括边框颜色、边框宽度、是否圆形处理 |
+| void setImageDrawable(Drawable drawable, int borderColor, int borderWidth, boolean isCircle) 	     |设置图片Drawable，包括边框颜色、边框宽度、是否圆形处理 |
+| void setImageBitmap(Bitmap bm, int borderColor, int borderWidth, boolean isCircle)	 	 | 设置图片bitmap，包括边框颜色、边框宽度、是否圆形处理 |
+
+
 About
 --
 * Email：venshine.cn@gmail.com

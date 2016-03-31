@@ -129,7 +129,7 @@ public class RoundImageView extends ImageView {
     }
 
     /**
-     * 判断是否设置圆形处理
+     * 是否设置圆形处理
      *
      * @return
      */
