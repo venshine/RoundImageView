@@ -22,7 +22,7 @@ compile 'com.wx.roundimageview:library:1.0.1'
 </dependency>
 ```
 
-##### 导入Eclipse:
+##### 导入Eclipse(只能使用Java代码设置参数):
 [下载jar包](https://github.com/venshine/RoundImageView/blob/master/library/roundimageview.jar)
 
 
