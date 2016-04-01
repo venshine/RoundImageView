@@ -9,7 +9,7 @@ Usage
 --
 ##### Gradle:
 ```groovy
-compile 'com.wx.roundimageview:library:1.0.0'
+compile 'com.wx.roundimageview:library:1.0.1'
 ```
 
 ##### Maven:
@@ -17,10 +17,13 @@ compile 'com.wx.roundimageview:library:1.0.0'
 <dependency>
   <groupId>com.wx.roundimageview</groupId>
   <artifactId>library</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
+
+##### 导入Eclipse:
+[下载jar包](https://github.com/venshine/RoundImageView/blob/master/library/roundimageview.jar)
 
 
 Demo
