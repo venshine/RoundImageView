@@ -29,6 +29,14 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.0'
 }
 
+task makeJar(type: Copy) {
+    delete 'build/libs/roundimageview.jar'
+    from('build/intermediates/bundles/release/')
+    into('build/libs/')
+    include('classes.jar')
+    rename ('classes.jar', 'roundimageview.jar')
+}
+
 def siteUrl = 'https://github.com/venshine/RoundImageView'      // 项目的主页
 def gitUrl = 'https://github.com/venshine/RoundImageView.git'   // Git仓库的url
 group = "com.wx.roundimageview"                                        // Maven Group ID for the artifact，一般填你唯一的包名

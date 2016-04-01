@@ -72,14 +72,18 @@ public class RoundImageView extends ImageView {
      * 初始化属性
      */
     private void initAttrs(Context context, AttributeSet attrs) {
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.round_imageview);
-        mBorderColor = ta.getColor(R.styleable.round_imageview_border_color, 0x00000000);
-        mBorderWidth = (int) ta.getDimension(R.styleable.round_imageview_border_width, 0);
-        mIsCircle = ta.getBoolean(R.styleable.round_imageview_circle, false);
-        ta.recycle();
-        int resId = attrs.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "src", -1);
-        if (resId != -1) {
-            setImageResource(resId, mBorderColor, mBorderWidth, mIsCircle);
+        try {
+            TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.round_imageview);
+            mBorderColor = ta.getColor(R.styleable.round_imageview_border_color, 0x00000000);
+            mBorderWidth = (int) ta.getDimension(R.styleable.round_imageview_border_width, 0);
+            mIsCircle = ta.getBoolean(R.styleable.round_imageview_circle, false);
+            ta.recycle();
+            int resId = attrs.getAttributeResourceValue("http://schemas.android.com/apk/res/android", "src", -1);
+            if (resId != -1) {
+                setImageResource(resId, mBorderColor, mBorderWidth, mIsCircle);
+            }
+        } catch (Error e) {
+            e.printStackTrace();
         }
     }
 
