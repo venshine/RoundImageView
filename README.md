@@ -9,21 +9,21 @@ Usage
 --
 ##### Gradle:
 ```groovy
-compile 'com.wx.roundimageview:library:1.0.1'
+compile 'com.wx.roundimageview:roundimageview:1.1.0'
 ```
 
 ##### Maven:
 ```xml
 <dependency>
   <groupId>com.wx.roundimageview</groupId>
-  <artifactId>library</artifactId>
-  <version>1.0.1</version>
+  <artifactId>roundimageview</artifactId>
+  <version>1.1.0</version>
   <type>pom</type>
 </dependency>
 ```
 
 ##### 导入Eclipse(只能使用Java代码设置参数):
-[下载jar包](https://github.com/venshine/RoundImageView/blob/master/library/roundimageview.jar)
+[下载jar包](https://github.com/venshine/RoundImageView/blob/master/roundimageview/roundimageview.jar)
 
 
 Demo
