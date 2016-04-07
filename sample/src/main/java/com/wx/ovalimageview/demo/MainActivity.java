@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wx.roundimageview.demo;
+package com.wx.ovalimageview.demo;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.wx.roundimageview.RoundImageView;
+import com.wx.ovalimageview.RoundImageView;
 
 /**
  * Demo

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.wx.roundimageview.RoundImageView
+    <com.wx.ovalimageview.RoundImageView
         android:id="@+id/round_imageview1"
         xmlns:app="http://schemas.android.com/apk/res/com.wx.roundimageview.demo"
         android:layout_width="wrap_content"
@@ -18,21 +18,21 @@
         app:circle="true"
         />
 
-    <com.wx.roundimageview.RoundImageView
+    <com.wx.ovalimageview.RoundImageView
         android:id="@+id/round_imageview2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         />
 
-    <com.wx.roundimageview.RoundImageView
+    <com.wx.ovalimageview.RoundImageView
         android:id="@+id/round_imageview3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         />
 
-    <com.wx.roundimageview.RoundImageView
+    <com.wx.ovalimageview.RoundImageView
         android:id="@+id/round_imageview4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

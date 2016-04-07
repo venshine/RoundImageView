@@ -25,7 +25,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.0'
 }
 
@@ -39,7 +38,7 @@ task makeJar(type: Copy) {
 
 def siteUrl = 'https://github.com/venshine/RoundImageView'      // 项目的主页
 def gitUrl = 'https://github.com/venshine/RoundImageView.git'   // Git仓库的url
-group = "com.wx.roundimageview"                                        // Maven Group ID for the artifact，一般填你唯一的包名
+group = "com.wx.ovalimageview"                                        // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
