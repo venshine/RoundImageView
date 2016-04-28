@@ -9,13 +9,13 @@ Usage
 --
 ##### Gradle:
 ```groovy
-compile 'com.wx.roundimageview:roundimageview:1.1.0'
+compile 'com.wx.ovalimageview:roundimageview:1.1.0'
 ```
 
 ##### Maven:
 ```xml
 <dependency>
-  <groupId>com.wx.roundimageview</groupId>
+  <groupId>com.wx.ovalimageview</groupId>
   <artifactId>roundimageview</artifactId>
   <version>1.1.0</version>
   <type>pom</type>
