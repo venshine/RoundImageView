@@ -23,5 +23,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.0'
 }
 
-//apply from: 'https://raw.githubusercontent.com/venshine/gradle-bintray-upload/master/bintray.gradle'
-apply from: 'http://git.oschina.net/venshine/gradle-bintray-upload/raw/master/bintray.gradle'
+//apply from: 'http://git.oschina.net/venshine/gradle-bintray-upload/raw/master/bintray.gradle'
