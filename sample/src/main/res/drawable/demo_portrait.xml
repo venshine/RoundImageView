@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自绘的 2:3 竖图：暮色天空、月亮、远山 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="180dp"
+    android:viewportWidth="120"
+    android:viewportHeight="180">
+    <path android:fillColor="#3B3F8C" android:pathData="M0,0h120v180h-120z"/>
+    <path android:fillColor="#F6E7B4" android:pathData="M84,40m-16,0a16,16 0,1 1,32 0a16,16 0,1 1,-32 0"/>
+    <path android:fillColor="#2B2D6B" android:pathData="M0,180L0,120L40,84L80,124L120,100L120,180z"/>
+    <path android:fillColor="#1D1F4D" android:pathData="M0,180L0,146L50,120L120,150L120,180z"/>
+</vector>

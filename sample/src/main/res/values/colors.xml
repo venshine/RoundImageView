@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 浅色主题色板；深色版本在 values-night/colors.xml，两边的颜色名必须一一对应 -->
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="bg">#F4F2EE</color>
+    <color name="text">#16181D</color>
+    <color name="text_muted">#5C6370</color>
+    <color name="accent">#FF7A3D</color>
+    <color name="demo_border">#C2410C</color>
 </resources>

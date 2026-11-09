@@ -1,94 +1,144 @@
-# RoundImageView   
+# RoundImageView
 
-[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
+English | [简体中文](README-CN.md)
 
-圆角图片控件，支持圆形边框和椭圆边框
+[![JitPack](https://jitpack.io/v/venshine/RoundImageView.svg)](https://jitpack.io/#venshine/RoundImageView)  [![CI](https://github.com/venshine/RoundImageView/actions/workflows/ci.yml/badge.svg)](https://github.com/venshine/RoundImageView/actions/workflows/ci.yml)  [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels)
 
-ScreenShot
+An `ImageView` that clips its image to a circle or an oval, with an optional border. Written in Kotlin, no dependencies besides the Kotlin standard library.
+
+## Screenshot
+
+| Light | Dark |
+|:---:|:---:|
+| <img src="screenshot/round-image-view-light.png" width="240" alt="RoundImageView" /> | <img src="screenshot/round-image-view-dark.png" width="240" alt="RoundImageView" /> |
+
+Screenshots are rendered by Robolectric.
+
+Do you need it?
 --
-![](https://github.com/venshine/RoundImageView/blob/master/screenshot/screenshot.png)
+Most apps no longer need a dedicated library for this:
+
+* [`ShapeableImageView`](https://developer.android.com/reference/com/google/android/material/imageview/ShapeableImageView) from Material Components covers circles, rounded corners and strokes.
+* Image loaders have their own transformations (Glide `CircleCrop` / `RoundedCorners`, Coil `CircleCropTransformation` / `RoundedCornersTransformation`).
+
+RoundImageView is for projects that do not want to depend on Material Components: it is a single small class, works with any `Drawable`, and honors `scaleType`.
 
 Usage
 --
 ##### Gradle:
+1. Add the JitPack repository to `settings.gradle`:
 ```groovy
-compile 'com.wx.ovalimageview:roundimageview:1.1.0'
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = 'https://jitpack.io' }
+    }
+}
+```
+2. Add the dependency to your module's `build.gradle`:
+```groovy
+implementation 'com.github.venshine:RoundImageView:2.0.0'
 ```
 
-##### Maven:
-```xml
-<dependency>
-  <groupId>com.wx.ovalimageview</groupId>
-  <artifactId>roundimageview</artifactId>
-  <version>1.1.0</version>
-  <type>pom</type>
-</dependency>
+##### Gradle Kotlin DSL:
+```kotlin
+// settings.gradle.kts
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
+    }
+}
+
+// build.gradle.kts
+implementation("com.github.venshine:RoundImageView:2.0.0")
 ```
 
-##### 导入Eclipse(只能使用Java代码设置参数):
-[下载jar包](https://github.com/venshine/RoundImageView/blob/master/roundimageview/roundimageview.jar)
-
+> Since 2.0.0 the library is written in Kotlin and published via JitPack. The old coordinate `com.wx.ovalimageview:roundimageview` can no longer be downloaded, and the jar for Eclipse is gone.
 
 Demo
 --
-Use the RoundImageView as a View, Java and XML are both supported.
-
-##### Java:
-```Java
-    public class MainActivity extends Activity {
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main)
-
-            RoundImageView imageView = (RoundImageView) findViewById(R.id.round_imageview);
-            imageView.setImageResource(R.mipmap.android, Color.RED, 10, true);
-
-        }
-    }
-```
+The package name is still `com.wx.ovalimageview`. The [sample app](sample) shows circle, oval, `scaleType` and an image-loader style transition, with light and dark themes.
 
 ##### XML:
 ```xml
-    <com.wx.roundimageview.RoundImageView
-        xmlns:app="http://schemas.android.com/apk/res/com.wx.roundimageview.demo"
-        android:id="@+id/round_imageview1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:src="@mipmap/ic_launcher"
-        app:border_color="#ff0000"
-        app:border_width="2dp"
-        app:circle="true"
-        />
+<com.wx.ovalimageview.RoundImageView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:scaleType="centerCrop"
+    android:src="@mipmap/ic_launcher"
+    app:border_color="#ff0000"
+    app:border_width="2dp"
+    app:circle="true" />
 ```
 
-##### Attributes:
-| attr 属性          | description 描述 |
-|:---				 |:---|
-| border_color  	     | 边框颜色 |
-| border_width  	     |边框宽度 |
-| circle	 	 | 是否圆形展示 |
+##### Kotlin:
+```kotlin
+val imageView = findViewById<RoundImageView>(R.id.round_imageview)
+imageView.scaleType = ImageView.ScaleType.CENTER_CROP
+imageView.borderColor = Color.RED
+imageView.borderWidth = 10
+imageView.isCircle = true
+imageView.setImageResource(R.drawable.avatar)
+```
 
+##### Java:
+```java
+RoundImageView imageView = findViewById(R.id.round_imageview);
+imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+imageView.setImageResource(R.drawable.avatar, Color.RED, 10, true);
+```
+
+##### Glide / Coil:
+The image is clipped when drawn, so anything that calls `setImageDrawable` works, including cross-fade transitions (`TransitionDrawable`). Set `scaleType` on the view and let the loader do the rest:
+
+```kotlin
+// Glide: do not add transform(CircleCrop()); the view clips already
+Glide.with(this).load(url).into(imageView)
+
+// Coil
+imageView.load(url)
+```
+
+If a loader applies its own `centerCrop` / `fitCenter` transformation, the view's `scaleType` still decides how the result is placed inside the view.
+
+##### Attributes:
+| attr | description |
+|:---|:---|
+| `border_color` | Border color. Fully transparent means no border |
+| `border_width` | Border width. `0` means no border |
+| `circle` | `true` clips to a circle (the shorter side of the content area is the diameter). `false` (default) clips to an oval filling the content area |
 
 ##### Methods:
-| method 方法          | description 描述 |
-|:---				 |:---|
-| void setBorderColor(String borderColor)  	     | 设置边框颜色，形如'#aarrggbb' |
-| void setBorderColor(int borderColor) 	     |设置边框颜色，形如{@link android.graphics.Color} |
-| int getBorderColor()	 	 | 获取边框颜色 |
-| void setBorderWidth(int borderWidth)  	     | 设置边框宽度 |
-| int getBorderWidth() 	     |获取边框宽度 |
-| void setCircle(boolean isCircle)	 	 | 设置圆形处理方式，默认按椭圆处理 |
-| boolean isCircle()  	     |是否设置圆形处理 |
-| void setImageResource(int resId, int borderColor, int borderWidth, boolean isCircle)	 	 | 设置图片资源，包括边框颜色、边框宽度、是否圆形处理 |
-| void setImageDrawable(Drawable drawable, int borderColor, int borderWidth, boolean isCircle) 	     |设置图片Drawable，包括边框颜色、边框宽度、是否圆形处理 |
-| void setImageBitmap(Bitmap bm, int borderColor, int borderWidth, boolean isCircle)	 	 | 设置图片bitmap，包括边框颜色、边框宽度、是否圆形处理 |
+| method | description |
+|:---|:---|
+| `borderColor` / `setBorderColor(int)` | Get / set the border color |
+| `setBorderColor(String)` | Set the border color, e.g. `"#aarrggbb"` |
+| `borderWidth` / `setBorderWidth(int)` | Get / set the border width in px |
+| `isCircle` / `setCircle(boolean)` | Get / set circle mode |
+| `setImageResource(int, int, int, boolean)` | Set the image with border color, border width and circle mode |
+| `setImageDrawable(Drawable, int, int, boolean)` | Same, with a `Drawable` |
+| `setImageBitmap(Bitmap, int, int, boolean)` | Same, with a `Bitmap` |
 
+Everything else (`setScaleType`, `setImageDrawable`, padding, ...) comes from `ImageView`.
 
-About
+Migrating from 1.x
 --
-* Email：venshine.cn@gmail.com
+* **Coordinate**: `com.wx.ovalimageview:roundimageview:1.1.0` becomes `com.github.venshine:RoundImageView:2.0.0`; `minSdk` is now 21.
+* **Clipping moved to drawing time.** `scaleType` is honored in every mode. The default is `centerCrop`, so the image fills the shape as circle mode did in 1.x; an `android:scaleType` set in XML or a style, or a later `setScaleType` call, takes precedence. In 1.x oval mode followed the `ImageView` default `fitCenter`; set `android:scaleType="fitCenter"` to keep that.
+* **Any `Drawable` works.** 1.x cast the drawable to `BitmapDrawable` and crashed on `TransitionDrawable`, vector drawables and so on. `setImageDrawable(null)` now clears the image instead of throwing.
+* **Setters redraw immediately.** In 1.x `setBorderColor`, `setBorderWidth` and `setCircle` only affected the next image you set.
+* **`RoundDrawable` is removed.** It was an implementation detail; use `RoundImageView` directly.
+* **Content area.** The shape and border follow the view's padding.
+* The border is drawn inside the shape, over the outer edge of the image, as before.
+* The shape is clipped with `Canvas.clipPath`. With hardware acceleration (the default) the edge is anti-aliased; on a software canvas it can look jagged.
+
+Status
+--
+Maintained on a best-effort basis. Not yet verified on a real device with the 2.0.0 rewrite; the behavior is covered by Robolectric unit tests that check the drawn pixels.
 
 License
 --
@@ -105,4 +155,3 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-

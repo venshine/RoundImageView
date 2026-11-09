@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自绘的 2:1 风景图：天空、太阳、两层山丘 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="120dp"
+    android:viewportWidth="240"
+    android:viewportHeight="120">
+    <path android:fillColor="#7EC8E3" android:pathData="M0,0h240v120h-240z"/>
+    <path android:fillColor="#FFD166" android:pathData="M180,34m-18,0a18,18 0,1 1,36 0a18,18 0,1 1,-36 0"/>
+    <path android:fillColor="#5FA777" android:pathData="M0,120L0,80Q50,40 100,78T200,70L240,84L240,120z"/>
+    <path android:fillColor="#2F7D4F" android:pathData="M0,120L0,100Q60,70 120,100T240,96L240,120z"/>
+</vector>

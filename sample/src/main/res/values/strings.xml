@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">RoundImageView</string>
+    <string name="title">RoundImageView 2.0</string>
+    <string name="section_shape">Circle and oval</string>
+    <string name="caption_circle">circle=true, border 4dp</string>
+    <string name="caption_oval">circle=false (oval), border 4dp</string>
+    <string name="section_scale">scaleType</string>
+    <string name="caption_center_crop">centerCrop</string>
+    <string name="caption_fit_center">fitCenter</string>
+    <string name="caption_center_inside">centerInside</string>
+    <string name="section_loader">Image loader (Glide / Coil)</string>
+    <string name="caption_loader">Loaders call setImageDrawable() with a TransitionDrawable; the shape still applies.</string>
+    <string name="load_image">Simulate a load</string>
 </resources>

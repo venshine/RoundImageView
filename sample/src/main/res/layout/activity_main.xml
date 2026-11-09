@@ -1,41 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fillViewport="true">
 
-    <com.wx.ovalimageview.RoundImageView
-        android:id="@+id/round_imageview1"
-        xmlns:app="http://schemas.android.com/apk/res/com.wx.roundimageview.demo"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:src="@mipmap/ic_launcher"
-        app:border_color="#ff0000"
-        app:border_width="2dp"
-        app:circle="true"
-        />
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <com.wx.ovalimageview.RoundImageView
-        android:id="@+id/round_imageview2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textColor="@color/text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <com.wx.ovalimageview.RoundImageView
-        android:id="@+id/round_imageview3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        />
+        <TextView
+            style="@style/SectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/section_shape" />
 
-    <com.wx.ovalimageview.RoundImageView
-        android:id="@+id/round_imageview4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        />
-</LinearLayout>
+        <com.wx.ovalimageview.RoundImageView
+            android:id="@+id/image_circle"
+            style="@style/DemoImage"
+            android:scaleType="centerCrop"
+            android:src="@drawable/demo_landscape"
+            app:border_color="@color/demo_border"
+            app:border_width="4dp"
+            app:circle="true" />
+
+        <TextView
+            style="@style/Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/caption_circle" />
+
+        <com.wx.ovalimageview.RoundImageView
+            android:id="@+id/image_oval"
+            android:layout_width="160dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/demo_landscape"
+            app:border_color="@color/demo_border"
+            app:border_width="4dp" />
+
+        <TextView
+            style="@style/Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/caption_oval" />
+
+        <TextView
+            style="@style/SectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/section_scale" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.wx.ovalimageview.RoundImageView
+                    android:id="@+id/image_center_crop"
+                    style="@style/DemoImage"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/demo_portrait"
+                    app:border_color="@color/demo_border"
+                    app:border_width="2dp" />
+
+                <TextView
+                    style="@style/Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/caption_center_crop" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.wx.ovalimageview.RoundImageView
+                    android:id="@+id/image_fit_center"
+                    style="@style/DemoImage"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/demo_portrait"
+                    app:border_color="@color/demo_border"
+                    app:border_width="2dp" />
+
+                <TextView
+                    style="@style/Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/caption_fit_center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.wx.ovalimageview.RoundImageView
+                    android:id="@+id/image_center_inside"
+                    style="@style/DemoImage"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/demo_portrait"
+                    app:border_color="@color/demo_border"
+                    app:border_width="2dp" />
+
+                <TextView
+                    style="@style/Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/caption_center_inside" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/section_loader" />
+
+        <TextView
+            style="@style/Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/caption_loader" />
+
+        <com.wx.ovalimageview.RoundImageView
+            android:id="@+id/image_loader"
+            style="@style/DemoImage"
+            android:scaleType="centerCrop"
+            app:border_color="@color/demo_border"
+            app:border_width="4dp"
+            app:circle="true" />
+
+        <Button
+            android:id="@+id/button_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/load_image" />
+    </LinearLayout>
+</ScrollView>
