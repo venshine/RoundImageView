@@ -144,7 +144,7 @@ imageView.load(url)
 
 维护状态
 --
-尽力维护。2.0.0 的 Kotlin 重写尚未在真机上验证；行为由 Robolectric 单元测试通过检查绘制出的像素来覆盖。
+尽力维护。2.0.0 的 Kotlin 重写已在 Android 17 真机上检查，Robolectric 单元测试会检查绘制出的像素。
 
 Credits
 --
