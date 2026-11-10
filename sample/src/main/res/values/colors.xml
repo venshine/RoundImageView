@@ -2,8 +2,29 @@
 <!-- 浅色主题色板；深色版本在 values-night/colors.xml，两边的颜色名必须一一对应 -->
 <resources>
     <color name="bg">#F4F2EE</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="border">#E4DFD6</color>
+    <color name="line">#D9D3C8</color>
     <color name="text">#16181D</color>
     <color name="text_muted">#5C6370</color>
+    <color name="text_dim">#646B77</color>
+    <color name="text_sub">#3A3F48</color>
+    <color name="code_bg">#FBFAF7</color>
+    <color name="code_border">#E4DFD6</color>
+    <color name="code_text">#24292F</color>
+    <color name="code_comment">#646B77</color>
+    <color name="code_string">#2F7D4F</color>
+    <color name="chevron">#9AA0AB</color>
+    <color name="seg_bg">#EFECE6</color>
+    <color name="seg_on">#FFFFFF</color>
     <color name="accent">#FF7A3D</color>
-    <color name="demo_border">#C2410C</color>
+    <!-- 强调色用作文字时的颜色：浅色背景上橙色对比度不足，换成加深的同色系 -->
+    <color name="accent_ink">#C2410C</color>
+    <color name="accent_soft">#1FFF7A3D</color>
+    <color name="accent_zone">#33FF7A3D</color>
+    <color name="on_accent">#1A0E06</color>
+    <!-- 命中 / 未命中的反馈色 -->
+    <color name="hit">#1F8A4C</color>
+    <color name="miss">#8A919C</color>
+    <color name="ripple">#1416181D</color>
 </resources>

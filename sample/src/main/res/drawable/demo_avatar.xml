@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自绘的 1:1 头像：暖色背景、人物半身 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <path android:fillColor="#FFD9B8" android:pathData="M0,0h120v120h-120z"/>
+    <path android:fillColor="#3B3F8C" android:pathData="M18,120C20,92 40,84 60,84C80,84 100,92 102,120z"/>
+    <path android:fillColor="#F2C4A0" android:pathData="M60,34m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0"/>
+    <path android:fillColor="#F2C4A0" android:pathData="M52,60h16v26h-16z"/>
+    <path android:fillColor="#2B2D6B" android:pathData="M36,34C36,14 48,8 60,8C74,8 84,16 84,34C80,24 70,20 60,22C50,22 40,26 36,34z"/>
+</vector>

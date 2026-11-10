@@ -8,11 +8,15 @@ An `ImageView` that clips its image to a circle or an oval, with an optional bor
 
 ## Screenshot
 
-| Light | Dark |
-|:---:|:---:|
-| <img src="screenshot/round-image-view-light.png" width="240" alt="RoundImageView" /> | <img src="screenshot/round-image-view-dark.png" width="240" alt="RoundImageView" /> |
+<img src="screenshot/demo.gif" width="300" alt="RoundImageView demo" />
 
-Screenshots are rendered by Robolectric.
+| Home | Dark mode | Shape & border | scaleType |
+|:---:|:---:|:---:|:---:|
+| <img src="screenshot/home.png" width="200" /> | <img src="screenshot/home_dark.png" width="200" /> | <img src="screenshot/shape.png" width="200" /> | <img src="screenshot/scale.png" width="200" /> |
+
+| Image loading |
+|:---:|
+| <img src="screenshot/loader.png" width="200" /> |
 
 Do you need it?
 --
@@ -139,6 +143,14 @@ Migrating from 1.x
 Status
 --
 Maintained on a best-effort basis. Not yet verified on a real device with the 2.0.0 rewrite; the behavior is covered by Robolectric unit tests that check the drawn pixels.
+
+Credits
+--
+The sample app bundles these fonts, both licensed under the [SIL Open Font License 1.1](https://openfontlicense.org) (license texts in [`sample/licenses/`](sample/licenses)):
+* [Space Grotesk](https://github.com/floriankarsten/space-grotesk): Copyright 2020 The Space Grotesk Project Authors
+* [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono): Copyright 2020 The JetBrains Mono Project Authors
+
+The library itself bundles no fonts.
 
 License
 --

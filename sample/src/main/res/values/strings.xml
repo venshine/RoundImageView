@@ -1,14 +1,54 @@
 <resources>
     <string name="app_name">RoundImageView</string>
-    <string name="title">RoundImageView 2.0</string>
-    <string name="section_shape">Circle and oval</string>
-    <string name="caption_circle">circle=true, border 4dp</string>
-    <string name="caption_oval">circle=false (oval), border 4dp</string>
-    <string name="section_scale">scaleType</string>
-    <string name="caption_center_crop">centerCrop</string>
-    <string name="caption_fit_center">fitCenter</string>
-    <string name="caption_center_inside">centerInside</string>
-    <string name="section_loader">Image loader (Glide / Coil)</string>
-    <string name="caption_loader">Loaders call setImageDrawable() with a TransitionDrawable; the shape still applies.</string>
-    <string name="load_image">Simulate a load</string>
+
+    <string name="back">返回</string>
+    <string name="theme_to_dark">切换到深色模式</string>
+    <string name="theme_to_light">切换到浅色模式</string>
+    <string name="view_source">查看源码</string>
+
+    <string name="home_examples">示例</string>
+    <string name="home_install">接入</string>
+    <string name="home_install_hint">JitPack · API 21+</string>
+    <string name="home_copy_dependency">复制依赖</string>
+    <string name="home_copied_dependency">已复制依赖</string>
+    <string name="home_license">Apache-2.0</string>
+    <string name="home_author">© venshine</string>
+
+    <!-- 首页 -->
+    <string name="home_eyebrow">ANDROID · ROUND IMAGE</string>
+    <string name="home_title">把图片，\n裁成圆和椭圆</string>
+    <string name="home_desc">绘制阶段用 clipPath 裁剪，scaleType 和 Glide / Coil 的渐变设图都照常工作。圆形、椭圆、边框，一个类搞定。</string>
+    <string name="home_preview">实时预览 · 边框颜色循环</string>
+    <string name="home_examples_hint">3 个场景，均可交互</string>
+    <string name="home_preview_meta">circle = true · border_width = 4dp</string>
+
+    <string name="demo_shape">形状与边框</string>
+    <string name="demo_shape_desc">圆形 / 椭圆切换，边框宽度和颜色实时可调</string>
+    <string name="demo_scale">scaleType</string>
+    <string name="demo_scale_desc">同一张图，三种缩放模式并排对比</string>
+    <string name="demo_loader">图片加载</string>
+    <string name="demo_loader_desc">模拟 Glide / Coil 渐变设图，对比普通 ImageView</string>
+
+    <!-- 形状与边框 -->
+    <string name="shape_circle">圆形</string>
+    <string name="shape_oval">椭圆</string>
+    <string name="shape_border_width">边框宽度</string>
+    <string name="shape_border_color">边框颜色</string>
+
+    <!-- scaleType -->
+    <string name="scale_source">图片</string>
+    <string name="scale_portrait">竖图 2:3</string>
+    <string name="scale_landscape">横图 2:1</string>
+    <string name="scale_circle">圆形裁剪</string>
+    <string name="scale_hint">浅色底板是控件自身的范围，图片只在裁剪形状内显示</string>
+
+    <!-- 图片加载 -->
+    <string name="loader_plain">ImageView</string>
+    <string name="loader_round">RoundImageView</string>
+    <string name="loader_button">模拟加载</string>
+    <string name="loader_hint">加载库最终都调用 setImageDrawable(TransitionDrawable)：普通 ImageView 铺满方形，RoundImageView 渐变过程中仍保持圆形。</string>
+    <string name="loader_idle">空闲 · 点击下方按钮</string>
+    <string name="loader_placeholder">占位图 · 等待 400ms</string>
+    <string name="loader_fading">TransitionDrawable 渐变中 · 600ms</string>
+    <string name="loader_done">加载完成 · 可再次触发</string>
 </resources>

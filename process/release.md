@@ -29,7 +29,7 @@ Library changes must also be re-tested on a real device for the affected scenari
 
 - Title is the version number. Notes are written in English, with sections such as "Added / Fixed / Breaking changes / Installation", kept or dropped as the release requires
 - Attachment: the sample APK, named `RoundImageView-sample-X.Y.Z.apk`
-  - Build: `./gradlew :sample:assembleDebug`; output at `sample/build/outputs/apk/debug/sample-debug.apk`
+  - Build: `./gradlew :sample:assembleDebug`; output at `sample/build/outputs/apk/debug/sample-debug.apk`, rename it to `RoundImageView-sample-X.Y.Z.apk` before attaching
   - Sign with the same local debug certificate as the other sample apps so users can install over an older version
 
 ## Afterwards
@@ -38,10 +38,4 @@ Library changes must also be re-tested on a real device for the affected scenari
 
 ## README screenshots
 
-If the sample UI changed, regenerate before tagging and review each PNG (not part of CI):
-
-```bash
-./gradlew :sample:testDebugUnitTest -Pscreenshots --tests '*ScreenshotGenerator'
-```
-
-Output goes to `screenshot/<name>-light.png` and `-dark.png`.
+Taken on a real device (not part of CI). If the sample UI changed, re-shoot the affected pages before tagging and review each image. Output goes to `screenshot/`.

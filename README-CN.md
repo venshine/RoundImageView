@@ -8,11 +8,15 @@
 
 ## 截图
 
-| 浅色 | 深色 |
-|:---:|:---:|
-| <img src="screenshot/round-image-view-light.png" width="240" alt="RoundImageView" /> | <img src="screenshot/round-image-view-dark.png" width="240" alt="RoundImageView" /> |
+<img src="screenshot/demo.gif" width="300" alt="RoundImageView demo" />
 
-截图由 Robolectric 渲染。
+| 首页 | 深色模式 | 形状与边框 | scaleType |
+|:---:|:---:|:---:|:---:|
+| <img src="screenshot/home.png" width="200" /> | <img src="screenshot/home_dark.png" width="200" /> | <img src="screenshot/shape.png" width="200" /> | <img src="screenshot/scale.png" width="200" /> |
+
+| 图片加载 |
+|:---:|
+| <img src="screenshot/loader.png" width="200" /> |
 
 你需要它吗？
 --
@@ -139,6 +143,14 @@ imageView.load(url)
 维护状态
 --
 尽力维护。2.0.0 的 Kotlin 重写尚未在真机上验证；行为由 Robolectric 单元测试通过检查绘制出的像素来覆盖。
+
+Credits
+--
+示例 App 打包了以下字体，均为 [SIL Open Font License 1.1](https://openfontlicense.org) 协议（协议原文见 [`sample/licenses/`](sample/licenses)）：
+* [Space Grotesk](https://github.com/floriankarsten/space-grotesk)：Copyright 2020 The Space Grotesk Project Authors
+* [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)：Copyright 2020 The JetBrains Mono Project Authors
+
+库本身不包含任何字体。
 
 许可证
 --

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
+        android:name=".DemoApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ShapeActivity" android:exported="false" />
+        <activity android:name=".ScaleActivity" android:exported="false" />
+        <activity android:name=".LoaderActivity" android:exported="false" />
     </application>
 
 </manifest>

@@ -3,160 +3,351 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingStart="@dimen/page_padding"
+        android:paddingTop="16dp"
+        android:paddingEnd="@dimen/page_padding"
+        android:paddingBottom="32dp">
 
+        <!-- 顶栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:background="@drawable/bg_logo"
+                android:importantForAccessibility="no"
+                android:padding="7dp"
+                android:src="@drawable/ic_logo"
+                app:tint="@color/on_accent" />
+
+            <TextView
+                style="@style/Text.Numeric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/app_name"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/version_chip"
+                style="@style/Text.Mono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_pill_outline"
+                android:paddingStart="8dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="3dp"
+                android:textColor="@color/text_muted"
+                android:textSize="10sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/theme_toggle"
+                style="@style/IconButton.Boxed"
+                android:contentDescription="@string/theme_to_dark"
+                android:src="@drawable/ic_moon" />
+
+            <ImageButton
+                android:id="@+id/source_button"
+                style="@style/IconButton.Boxed"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/view_source"
+                android:src="@drawable/ic_code" />
+        </LinearLayout>
+
+        <!-- 标题 -->
         <TextView
+            style="@style/Text.Mono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textColor="@color/text"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="28dp"
+            android:letterSpacing="0.14"
+            android:text="@string/home_eyebrow"
+            android:textColor="@color/accent_ink" />
 
         <TextView
-            style="@style/SectionTitle"
+            style="@style/Text.H1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/section_shape" />
-
-        <com.wx.ovalimageview.RoundImageView
-            android:id="@+id/image_circle"
-            style="@style/DemoImage"
-            android:scaleType="centerCrop"
-            android:src="@drawable/demo_landscape"
-            app:border_color="@color/demo_border"
-            app:border_width="4dp"
-            app:circle="true" />
-
-        <TextView
-            style="@style/Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/caption_circle" />
-
-        <com.wx.ovalimageview.RoundImageView
-            android:id="@+id/image_oval"
-            android:layout_width="160dp"
-            android:layout_height="96dp"
             android:layout_marginTop="12dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/demo_landscape"
-            app:border_color="@color/demo_border"
-            app:border_width="4dp" />
+            android:text="@string/home_title" />
 
         <TextView
-            style="@style/Caption"
-            android:layout_width="wrap_content"
+            style="@style/Text.Body"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/caption_oval" />
+            android:layout_marginTop="12dp"
+            android:text="@string/home_desc" />
 
-        <TextView
-            style="@style/SectionTitle"
-            android:layout_width="wrap_content"
+        <!-- 即时预览 -->
+
+        <LinearLayout
+            style="@style/Card"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/section_scale" />
+            android:layout_marginTop="28dp"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_preview"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.wx.ovalimageview.RoundImageView
+                    android:id="@+id/preview_avatar"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:src="@drawable/demo_avatar"
+                    app:border_color="@color/accent"
+                    app:border_width="4dp"
+                    app:circle="true" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Text.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="border_color" />
+
+                    <TextView
+                        android:id="@+id/preview_color_text"
+                        style="@style/Text.Numeric"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        style="@style/Text.Mono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/home_preview_meta"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 示例入口 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:baselineAligned="true"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.Section"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/home_examples" />
+
+            <TextView
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_examples_hint"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_shape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_accent_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_shape"
+                    app:tint="@color/on_accent" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_arrow"
+                    app:tint="@color/on_accent" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/demo_shape"
+                android:textColor="@color/on_accent"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/demo_shape_desc"
+                android:textColor="@color/on_accent"
+                android:textSize="13sp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:baselineAligned="false"
             android:orientation="horizontal">
 
-            <LinearLayout
+            <include
+                android:id="@+id/card_scale"
+                layout="@layout/item_demo_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_weight="1" />
 
-                <com.wx.ovalimageview.RoundImageView
-                    android:id="@+id/image_center_crop"
-                    style="@style/DemoImage"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/demo_portrait"
-                    app:border_color="@color/demo_border"
-                    app:border_width="2dp" />
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="0dp" />
 
-                <TextView
-                    style="@style/Caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/caption_center_crop" />
-            </LinearLayout>
-
-            <LinearLayout
+            <include
+                android:id="@+id/card_loader"
+                layout="@layout/item_demo_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <com.wx.ovalimageview.RoundImageView
-                    android:id="@+id/image_fit_center"
-                    style="@style/DemoImage"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/demo_portrait"
-                    app:border_color="@color/demo_border"
-                    app:border_width="2dp" />
-
-                <TextView
-                    style="@style/Caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/caption_fit_center" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <com.wx.ovalimageview.RoundImageView
-                    android:id="@+id/image_center_inside"
-                    style="@style/DemoImage"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/demo_portrait"
-                    app:border_color="@color/demo_border"
-                    app:border_width="2dp" />
-
-                <TextView
-                    style="@style/Caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/caption_center_inside" />
-            </LinearLayout>
+                android:layout_weight="1" />
         </LinearLayout>
 
-        <TextView
-            style="@style/SectionTitle"
-            android:layout_width="wrap_content"
+        <!-- 接入 -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/section_loader" />
+            android:layout_marginTop="28dp"
+            android:baselineAligned="true"
+            android:orientation="horizontal">
 
-        <TextView
-            style="@style/Caption"
-            android:layout_width="wrap_content"
+            <TextView
+                style="@style/Text.Section"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/home_install" />
+
+            <TextView
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_install_hint"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/caption_loader" />
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_code"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <com.wx.ovalimageview.RoundImageView
-            android:id="@+id/image_loader"
-            style="@style/DemoImage"
-            android:scaleType="centerCrop"
-            app:border_color="@color/demo_border"
-            app:border_width="4dp"
-            app:circle="true" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
 
-        <Button
-            android:id="@+id/button_load"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/install_code"
+                    style="@style/Text.Mono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5" />
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/copy_dependency"
+                style="@style/Button.Outline"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginTop="14dp"
+                android:drawablePadding="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/home_copy_dependency"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/load_image" />
+            android:layout_marginTop="28dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="0"
+                android:text="@string/home_license" />
+
+            <TextView
+                style="@style/Text.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0"
+                android:text="@string/home_author" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
