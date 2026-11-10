@@ -6,6 +6,8 @@ English | [简体中文](README-CN.md)
 
 An `ImageView` that clips its image to a circle or an oval, with an optional border. Written in Kotlin, no dependencies besides the Kotlin standard library.
 
+[**Download the sample APK**](https://github.com/venshine/RoundImageView/releases/download/2.0.0/RoundImageView-sample-2.0.0.apk)
+
 ## Screenshot
 
 <img src="screenshot/demo.gif" width="300" alt="RoundImageView demo" />

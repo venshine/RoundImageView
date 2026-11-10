@@ -6,6 +6,8 @@
 
 把图片裁成圆形或椭圆、可加边框的 `ImageView`。Kotlin 编写，除 Kotlin 标准库外没有其他依赖。
 
+[**下载示例 APK**](https://github.com/venshine/RoundImageView/releases/download/2.0.0/RoundImageView-sample-2.0.0.apk)
+
 ## 截图
 
 <img src="screenshot/demo.gif" width="300" alt="RoundImageView demo" />
